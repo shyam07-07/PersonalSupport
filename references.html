@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shyam Pandey | References</title>
+  <meta
+    name="description"
+    content="Professional references for Shyam Pandey, Personal Support Worker student."
+  />
+
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --white: #ffffff;
+      --primary: #1f4e79;
+      --primary-dark: #173a5c;
+      --accent: #4c8bf5;
+      --text: #1c2430;
+      --muted: #5f6b7a;
+      --border: #d9e2ec;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+      --max-width: 1100px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, #f7f9fc 0%, #eef5ff 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(217, 226, 236, 0.8);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 0.8rem 1.25rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 20px rgba(31, 78, 121, 0.16);
+    }
+
+    .back-btn:hover {
+      background: var(--primary-dark);
+      color: #fff;
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 90px 0 45px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.88rem;
+      margin-bottom: 0.7rem;
+      animation: fadeUp 0.6s ease forwards;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.7s ease forwards;
+      animation-delay: 0.1s;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.7s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    .references-section {
+      padding: 20px 0 80px;
+    }
+
+    .references-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .reference-card {
+      position: relative;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(217, 226, 236, 0.95);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 1.7rem;
+      min-height: 100%;
+      opacity: 0;
+      transform: translateY(24px);
+      animation: fadeUp 0.7s ease forwards;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+    }
+
+    .reference-card:nth-child(1) { animation-delay: 0.25s; }
+    .reference-card:nth-child(2) { animation-delay: 0.4s; }
+    .reference-card:nth-child(3) { animation-delay: 0.55s; }
+
+    .reference-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 6px;
+      background: linear-gradient(180deg, var(--accent), var(--primary));
+    }
+
+    .reference-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+      border-color: #bdd0e5;
+    }
+
+    .reference-label {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+    }
+
+    .reference-card h2 {
+      color: var(--primary-dark);
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+    }
+
+    .reference-list p {
+      margin-bottom: 0.7rem;
+      color: var(--text);
+    }
+
+    .reference-list strong {
+      color: var(--primary-dark);
+    }
+
+    .ref-email,
+    .ref-phone {
+      display: inline-block;
+      color: var(--primary);
+      word-break: break-word;
+    }
+
+    .bottom-actions {
+      text-align: center;
+      margin-top: 2.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.7s ease forwards;
+      animation-delay: 0.75s;
+    }
+
+    .bottom-actions a {
+      display: inline-block;
+      padding: 0.9rem 1.5rem;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-weight: 600;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    .bottom-actions a:hover {
+      text-decoration: none;
+      transform: translateY(-2px);
+      border-color: var(--primary);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .references-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        padding-top: 70px;
+      }
+
+      .reference-card {
+        padding: 1.35rem;
+      }
+
+      .back-btn {
+        padding: 0.72rem 1rem;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Shyam Pandey</a>
+      <a href="index.html#references" class="back-btn">← Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Professional References</p>
+        <h1>Reference Page</h1>
+        <p>
+          The following references reflect my academic learning, placement experience,
+          and professional growth as a Personal Support Worker student.
+        </p>
+      </div>
+    </section>
+
+    <section class="references-section">
+      <div class="container">
+        <div class="references-grid">
+          <article class="reference-card">
+            <span class="reference-label">Reference 1</span>
+            <h2>Lecia McKenzie</h2>
+            <div class="reference-list">
+              <p><strong>Position:</strong> Clinical Instructor</p>
+              <p><strong>Organization:</strong> Centennial College</p>
+              <p><strong>Email:</strong> <span class="ref-email">Add updated email</span></p>
+              <p><strong>Phone:</strong> <span class="ref-phone">Add contact number</span></p>
+              <p><strong>Relationship:</strong> Clinical instructor who supported my PSW learning and skills development.</p>
+            </div>
+          </article>
+
+          <article class="reference-card">
+            <span class="reference-label">Reference 2</span>
+            <h2>Irene Rayo</h2>
+            <div class="reference-list">
+              <p><strong>Position:</strong> Preceptor</p>
+              <p><strong>Organization:</strong> Michael Garron Hospital</p>
+              <p><strong>Email:</strong> <span class="ref-email">Add updated email</span></p>
+              <p><strong>Phone:</strong> <span class="ref-phone">Add contact number</span></p>
+              <p><strong>Relationship:</strong> Preceptor who supervised my placement learning and patient care activities.</p>
+            </div>
+          </article>
+
+          <article class="reference-card">
+            <span class="reference-label">Reference 3</span>
+            <h2>Add Third Reference Name</h2>
+            <div class="reference-list">
+              <p><strong>Position:</strong> Previous Employer / Supervisor</p>
+              <p><strong>Organization:</strong> Add organization name</p>
+              <p><strong>Email:</strong> <span class="ref-email">Add updated email</span></p>
+              <p><strong>Phone:</strong> <span class="ref-phone">Add contact number</span></p>
+              <p><strong>Relationship:</strong> Professional reference who can speak about my work ethic, reliability, and communication skills.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="bottom-actions">
+          <a href="index.html#contact">Contact Me</a>
+          <a href="index.html#documents">View Documents</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

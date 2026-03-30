@@ -3,26 +3,150 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shyam Pandey | PSW Student Portfolio</title>
+  <title>Shyam Pandey | PSW Student E-Portfolio</title>
   <meta
     name="description"
-    content="Professional portfolio of Shyam Pandey, Personal Support Worker student, showcasing education, skills, certifications, and career goals."
+    content="Professional e-portfolio of Shyam Pandey, Personal Support Worker student, showcasing work philosophy, skills, education, certifications, work samples, and career goals."
   />
   <link rel="stylesheet" href="assets/styles.css" />
+  <style>
+/* ===== TABLE OF CONTENTS MODERN STYLE ===== */
+
+#toc .card {
+  padding: 2rem;
+  border-radius: 18px;
+}
+
+/* Grid layout */
+.toc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+/* Link card */
+.toc-link {
+  display: block;
+  padding: 1.1rem 1.2rem;
+  border-radius: 14px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background: linear-gradient(135deg, #f8fbff, #eef5ff);
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover animation */
+.toc-link:hover {
+  transform: translateY(-5px) scale(1.02);
+  background: linear-gradient(135deg, #eaf2ff, #dce9ff);
+  border-color: var(--accent);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+  text-decoration: none;
+}
+
+/* Animated left accent bar */
+.toc-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background: var(--accent);
+  border-radius: 14px 0 0 14px;
+  transition: width 0.3s ease;
+}
+
+.toc-link:hover::before {
+  width: 6px;
+}
+
+/* Subtle shine effect */
+.toc-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255,255,255,0) 0%,
+    rgba(255,255,255,0.6) 50%,
+    rgba(255,255,255,0) 100%
+  );
+  transform: skewX(-20deg);
+}
+
+.toc-link:hover::after {
+  animation: shine 0.7s ease;
+}
+
+/* Fade-in animation */
+#toc .toc-link {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* Stagger animation */
+#toc .toc-link:nth-child(1) { animation-delay: 0.1s; }
+#toc .toc-link:nth-child(2) { animation-delay: 0.2s; }
+#toc .toc-link:nth-child(3) { animation-delay: 0.3s; }
+#toc .toc-link:nth-child(4) { animation-delay: 0.4s; }
+#toc .toc-link:nth-child(5) { animation-delay: 0.5s; }
+#toc .toc-link:nth-child(6) { animation-delay: 0.6s; }
+#toc .toc-link:nth-child(7) { animation-delay: 0.7s; }
+#toc .toc-link:nth-child(8) { animation-delay: 0.8s; }
+#toc .toc-link:nth-child(9) { animation-delay: 0.9s; }
+#toc .toc-link:nth-child(10) { animation-delay: 1s; }
+
+/* Keyframes */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .toc-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 <body>
   <header class="header">
     <div class="container nav">
       <a href="#home" class="logo">Shyam Pandey</a>
+
       <nav>
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links">
           <li><a href="#about">About</a></li>
+          <li><a href="#statement">Originality</a></li>
+          <li><a href="#philosophy">Philosophy</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#certifications">Certificates</a></li>
+          <li><a href="#documents">Documents</a></li>
+          <li><a href="#study">Study Plan</a></li>
+          <li><a href="#experience">Experience</a></li>
           <li><a href="#goals">Goals</a></li>
+          <li><a href="#references">References</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
       <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">☰</button>
     </div>
   </header>
@@ -32,14 +156,15 @@
       <div class="container hero-content">
         <div class="hero-text">
           <p class="eyebrow">Personal Support Worker Student</p>
-          <h1>Professional Portfolio</h1>
+          <h1>Professional E-Portfolio</h1>
           <p class="lead">
-            I am a dedicated PSW student with a strong interest in providing safe,
-            compassionate, and respectful care to clients in clinical and community settings.
-            This portfolio highlights my training, certifications, and professional development.
+            Welcome to my e-portfolio. I am a Personal Support Worker student with a strong commitment
+            to safe, respectful, and compassionate care. This portfolio highlights my learning,
+            placement experiences, professional strengths, certifications, and future goals in healthcare.
           </p>
+
           <div class="hero-buttons">
-            <a href="#certifications" class="btn btn-primary">View Certifications</a>
+            <a href="#documents" class="btn btn-primary">View My Documents</a>
             <a href="#contact" class="btn btn-secondary">Contact Me</a>
           </div>
         </div>
@@ -48,33 +173,102 @@
           <h2>Quick Profile</h2>
           <ul>
             <li><strong>Name:</strong> Shyam Pandey</li>
-            <li><strong>Program:</strong> Personal Support Worker (PSW) Student</li>
-            <li><strong>Field of Interest:</strong> Long-Term Care, Community Care, Hospital Support</li>
-            <li><strong>Focus:</strong> Safe, compassionate, person-centered care</li>
+            <li><strong>Program:</strong> Personal Support Worker</li>
+            <li><strong>School:</strong> Centennial College</li>
+            <li><strong>Area of Interest:</strong> Hospital, Community, and Long-Term Care</li>
+            <li><strong>Strengths:</strong> Compassion, teamwork, safety, communication</li>
           </ul>
         </div>
       </div>
     </section>
 
+    <!-- TABLE OF CONTENTS -->
+<section id="toc" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-tag">Table of Contents</p>
+      <h2>Portfolio Sections</h2>
+    </div>
+
+    <div class="card">
+      <div class="toc-grid">
+        <a href="#about" class="toc-link">1. About Me</a>
+        <a href="#statement" class="toc-link">2. Originality</a>
+        <a href="#philosophy" class="toc-link">3. Work Philosophy</a>
+        <a href="#skills" class="toc-link">4. Strengths</a>
+        <a href="#documents" class="toc-link">5. Documents</a>
+        <a href="#study" class="toc-link">6. Study Plan</a>
+        <a href="#experience" class="toc-link">7. Experience</a>
+        <a href="#global" class="toc-link">8. Global Citizenship</a>
+        <a href="#goals" class="toc-link">9. Career Goals</a>
+        <a href="#references" class="toc-link">10. References</a>
+        <a href="#contact" class="toc-link">11. Contact</a>
+      </div>
+    </div>
+  </div>
+</section>
+
     <section id="about" class="section">
       <div class="container">
         <div class="section-heading">
           <p class="section-tag">About Me</p>
-          <h2>Committed to Dignity, Safety, and Compassion</h2>
+          <h2>Who I Am</h2>
         </div>
 
         <div class="card">
           <p>
-            I am a Personal Support Worker student preparing for a career in healthcare where I can
-            support individuals with dignity, patience, and empathy. My training has helped me build
-            practical knowledge in client care, safety, infection prevention, mobility assistance,
-            communication, and professional responsibility.
+            I am a dedicated Personal Support Worker student who is passionate about helping people
+            live with dignity, comfort, and respect. Through my studies and placement experiences, I
+            have developed practical knowledge in personal care, mobility assistance, communication,
+            infection prevention, and client safety.
           </p>
           <p>
-            I value respectful and client-centered care, and I am committed to supporting people with
-            their daily living needs while promoting comfort, independence, and well-being. I am also
-            focused on continuous learning and developing the skills required to work effectively with
-            clients, families, and healthcare teams.
+            I enjoy working with clients from different backgrounds and believe in providing
+            person-centered care that respects each individual’s needs, values, and preferences.
+            I am committed to learning, growing professionally, and becoming a reliable member of
+            the healthcare team.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="statement" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-tag">Statement</p>
+          <h2>Statement of Originality and Confidentiality</h2>
+        </div>
+
+        <div class="card">
+          <p>
+            I declare that this e-portfolio is my own original work created for my Personal Support
+            Worker program. The materials included in this portfolio reflect my learning, skills,
+            placement experiences, and professional development. This portfolio also respects
+            confidentiality. No personal or identifying information about clients, residents, or
+            patients has been included.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="philosophy" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-tag">Work Philosophy</p>
+          <h2>My Philosophy as a PSW</h2>
+        </div>
+
+        <div class="card">
+          <p>
+            My philosophy as a Personal Support Worker is to provide care with compassion, dignity,
+            patience, and respect. I believe every client deserves to feel safe, valued, and heard.
+            As a PSW, I want to support clients in a way that promotes comfort, independence, and
+            quality of life.
+          </p>
+          <p>
+            I also believe that good care is built on trust, professional communication, cultural
+            sensitivity, and teamwork. I want to be the kind of PSW who not only helps with daily
+            needs, but also makes clients feel supported emotionally and socially.
           </p>
         </div>
       </div>
@@ -83,352 +277,328 @@
     <section id="skills" class="section section-alt">
       <div class="container">
         <div class="section-heading">
-          <p class="section-tag">Core Skills</p>
-          <h2>Knowledge and Strengths</h2>
+          <p class="section-tag">Strengths</p>
+          <h2>Why You Should Hire Me</h2>
         </div>
 
-        <div class="grid-3">
+        <div class="card">
+          <p>
+            I am a hardworking and dependable PSW student who genuinely cares about clients and their
+            well-being. I bring a positive attitude, a willingness to learn, and a strong commitment
+            to respectful and safe care.
+          </p>
+          <p>
+            During placement, I have assisted with morning care, brief changes, perineal care, full
+            bed baths, feeding, transfers, repositioning, and infection control practices. These
+            experiences have helped me become more confident, observant, and professional in a
+            healthcare setting.
+          </p>
+          <p>
+            My strengths include empathy, patience, teamwork, communication, and responsibility. I
+            always try to maintain client dignity, follow instructions carefully, and support the
+            healthcare team in providing quality care.
+          </p>
+        </div>
+
+        <div class="grid-3 top-gap">
           <div class="card skill-card">
-            <h3>Client Care</h3>
+            <h3>Compassionate Care</h3>
             <p>
-              Assistance with activities of daily living, mobility support, comfort care, and maintaining
-              client dignity and privacy.
+              I support clients with kindness, dignity, and patience during personal care and daily
+              activities.
             </p>
           </div>
 
           <div class="card skill-card">
-            <h3>Safety & Infection Control</h3>
+            <h3>Safety Awareness</h3>
             <p>
-              Understanding of hand hygiene, PPE use, safe transfers, fall prevention, and maintaining
-              clean and safe care environments.
+              I understand the importance of PPE, hand hygiene, fall prevention, safe transfers, and
+              clean care environments.
             </p>
           </div>
 
           <div class="card skill-card">
             <h3>Communication</h3>
             <p>
-              Respectful communication with clients, families, preceptors, and healthcare team members,
-              with a focus on empathy and professionalism.
+              I communicate respectfully with clients, families, instructors, preceptors, and team
+              members.
+            </p>
+          </div>
+
+          <div class="card skill-card">
+            <h3>Teamwork</h3>
+            <p>
+              I work cooperatively with others and understand the value of collaboration in client care.
             </p>
           </div>
 
           <div class="card skill-card">
             <h3>Professionalism</h3>
             <p>
-              Reliable, responsible, eager to learn, and committed to providing ethical and culturally
-              respectful care.
+              I am reliable, punctual, willing to learn, and committed to ethical and respectful practice.
             </p>
           </div>
 
           <div class="card skill-card">
-            <h3>Documentation Awareness</h3>
+            <h3>Placement Readiness</h3>
             <p>
-              Awareness of the importance of accurate reporting, observing client changes, and following
-              care plans and organizational policies.
-            </p>
-          </div>
-
-          <div class="card skill-card">
-            <h3>Team Collaboration</h3>
-            <p>
-              Able to work cooperatively with instructors, preceptors, and interdisciplinary healthcare
-              teams to support quality care.
+              I am building strong hands-on skills through clinical and community placement experiences.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="certifications" class="section">
+    <section id="documents" class="section">
       <div class="container">
         <div class="section-heading">
-          <p class="section-tag">Certifications</p>
-          <h2>Training and Professional Documents</h2>
+          <p class="section-tag">Portfolio Documents</p>
+          <h2>Resume, Work Samples, and Certifications</h2>
         </div>
 
-        <div class="grid-2 cert-grid">
+        <div class="grid-2">
           <div class="card cert-card">
-            <h3>Mask Fit Certificate</h3>
-            <p>Proof of mask fit training for safe use of respiratory protective equipment.</p>
-            <a href="assets/certificates/maskfit.jpg" target="_blank" class="cert-link">View Certificate</a>
+            <h3>Cover Letter</h3>
+            <p>
+              A copy of my cover letter prepared for PSW employment opportunities.
+            </p>
+            <a href="assets/certificates/psw-cover-letter.pdf" target="_blank" class="cert-link">View Cover Letter</a>
           </div>
 
           <div class="card cert-card">
-            <h3>CPR / First Aid</h3>
-            <p>Certification in emergency response, basic first aid, and CPR skills.</p>
+            <h3>Resume</h3>
+            <p>
+              A copy of my resume highlighting my PSW education, skills, certifications, and placement experience.
+            </p>
+            <a href="assets/certificates/psw-resume.pdf" target="_blank" class="cert-link">View Resume</a>
+          </div>
+
+          <div class="card cert-card">
+            <h3>POP (Personal Organizational Plan)</h3>
+            <p>
+              Sample of my POP assignment showing my understanding of planning and client care.
+            </p>
+            <a href="assets/certificates/pop.pdf" target="_blank" class="cert-link">View POP</a>
+          </div>
+
+          <div class="card cert-card">
+            <h3>Midterm Evaluation</h3>
+            <p>
+              My midterm clinical evaluation showing my progress and developing competencies.
+            </p>
+            <a href="assets/certificates/midterm-evaluation.pdf" target="_blank" class="cert-link">View Midterm Evaluation</a>
+          </div>
+
+          <div class="card cert-card">
+            <h3>Final Evaluation</h3>
+            <p>
+              My final evaluation reflecting my placement learning and practical growth.
+            </p>
+            <a href="assets/certificates/final-evaluation.pdf" target="_blank" class="cert-link">View Final Evaluation</a>
+          </div>
+          </div>
+
+        <div class="section-heading small-gap">
+          <p class="section-tag">Certifications</p>
+          <h2>Certificates, Training, and Achievements</h2>
+        </div>
+
+        <div class="grid-2">
+          <div class="card cert-card">
+            <h3>CPR / First Aid / BLS</h3>
+            <p>
+              Certification in emergency response, basic life support, and first aid.
+            </p>
             <a href="assets/certificates/cpr-firstaid.jpg" target="_blank" class="cert-link">View Certificate</a>
           </div>
 
           <div class="card cert-card">
-            <h3>Dementia Certificate</h3>
-            <p>Training related to dementia awareness and supportive care approaches.</p>
-            <a href="assets/certificates/dementia.pdf" target="_blank" class="cert-link">View Certificate</a>
+            <h3>Mask Fit Certificate</h3>
+            <p>
+              Training for safe use of respiratory protective equipment.
+            </p>
+            <a href="assets/certificates/maskfit.jpg" target="_blank" class="cert-link">View Certificate</a>
           </div>
 
           <div class="card cert-card">
             <h3>Food Handling Certificate</h3>
-            <p>Certification in safe food handling, hygiene, and basic food safety practices.</p>
+            <p>
+              Training in food safety, hygiene, and proper food handling practices.
+            </p>
             <a href="assets/certificates/foodhandling.pdf" target="_blank" class="cert-link">View Certificate</a>
           </div>
 
           <div class="card cert-card">
-            <h3>OHRC - Course Certificate</h3>
-            <p>Certification in OHRC - Ontario Human Rights And Disabilities Certification.</p>
-            <a href="assets/certificates/ohrc.pdf" target="_blank" class="cert-link">View Certificate</a>
-          </div>
-
-          <div class="card cert-card">
-            <h3>Driver’s License</h3>
-            <p>Valid driver’s license documentation for transportation-related requirements.</p>
-            <a href="certificates/driving-license.pdf" target="_blank" class="cert-link">View Document</a>
-          </div>
-        </div>
-
-        <p class="note">
-          Note: If your certificate file names are different, update the links in the code above to match
-          your exact file names.
-        </p>
-      </div>
-    </section>
-
-    <section id="goals" class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-tag">Career Goals</p>
-          <h2>Professional Direction</h2>
-        </div>
-
-        <div class="card">
-          <p>
-            My goal is to build a strong healthcare career by providing compassionate support to clients
-            in hospitals, long-term care homes, and community settings. As a PSW student, I am focused on
-            strengthening my clinical skills, professional communication, and confidence in delivering safe
-            and respectful care.
-          </p>
-          <p>
-            I hope to continue learning through placement experiences, teamwork, and ongoing education so I
-            can make a positive difference in the lives of the people I support.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-tag">Contact</p>
-          <h2>Get in Touch</h2>
-        </div>
-
-        <div class="card contact-card">
-          <p>
-            Thank you for visiting my professional portfolio. Please feel free to contact me for placement,
-            employment, or professional networking opportunities.
-          </p>
-
-          <div class="contact-list">
-            <p><strong>Email:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-            <p><strong>Phone:</strong> <a href="tel:+10000000000">+1 (000) 000-0000</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>© <span id="year"></span> Shyam Pandey. All rights reserved.</p>
-      <p>Personal Support Worker Student Portfolio</p>
-    </div>
-  </footer>
-
-  <script src="assets/scripts.js"></script>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shyam Pandey | PSW Student Portfolio</title>
-  <meta
-    name="description"
-    content="Professional portfolio of Shyam Pandey, Personal Support Worker student, showcasing education, skills, certifications, and career goals."
-  />
-  <link rel="stylesheet" href="assets/styles.css" />
-</head>
-<body>
-  <header class="header">
-    <div class="container nav">
-      <a href="#home" class="logo">Shyam Pandey</a>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#certifications">Certificates</a></li>
-          <li><a href="#goals">Goals</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <button id="menu-toggle" class="menu-toggle" aria-label="Open menu">☰</button>
-    </div>
-  </header>
-
-  <main>
-    <section id="home" class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <p class="eyebrow">Personal Support Worker Student</p>
-          <h1>Professional Portfolio</h1>
-          <p class="lead">
-            I am a dedicated PSW student with a strong interest in providing safe,
-            compassionate, and respectful care to clients in clinical and community settings.
-            This portfolio highlights my training, certifications, and professional development.
-          </p>
-          <div class="hero-buttons">
-            <a href="#certifications" class="btn btn-primary">View Certifications</a>
-            <a href="#contact" class="btn btn-secondary">Contact Me</a>
-          </div>
-        </div>
-
-        <div class="hero-card">
-          <h2>Quick Profile</h2>
-          <ul>
-            <li><strong>Name:</strong> Shyam Pandey</li>
-            <li><strong>Program:</strong> Personal Support Worker (PSW) Student</li>
-            <li><strong>Field of Interest:</strong> Long-Term Care, Community Care, Hospital Support</li>
-            <li><strong>Focus:</strong> Safe, compassionate, person-centered care</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-tag">About Me</p>
-          <h2>Committed to Dignity, Safety, and Compassion</h2>
-        </div>
-
-        <div class="card">
-          <p>
-            I am a Personal Support Worker student preparing for a career in healthcare where I can
-            support individuals with dignity, patience, and empathy. My training has helped me build
-            practical knowledge in client care, safety, infection prevention, mobility assistance,
-            communication, and professional responsibility.
-          </p>
-          <p>
-            I value respectful and client-centered care, and I am committed to supporting people with
-            their daily living needs while promoting comfort, independence, and well-being. I am also
-            focused on continuous learning and developing the skills required to work effectively with
-            clients, families, and healthcare teams.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section section-alt">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-tag">Core Skills</p>
-          <h2>Knowledge and Strengths</h2>
-        </div>
-
-        <div class="grid-3">
-          <div class="card skill-card">
-            <h3>Client Care</h3>
-            <p>
-              Assistance with activities of daily living, mobility support, comfort care, and maintaining
-              client dignity and privacy.
-            </p>
-          </div>
-
-          <div class="card skill-card">
-            <h3>Safety & Infection Control</h3>
-            <p>
-              Understanding of hand hygiene, PPE use, safe transfers, fall prevention, and maintaining
-              clean and safe care environments.
-            </p>
-          </div>
-
-          <div class="card skill-card">
-            <h3>Communication</h3>
-            <p>
-              Respectful communication with clients, families, preceptors, and healthcare team members,
-              with a focus on empathy and professionalism.
-            </p>
-          </div>
-
-          <div class="card skill-card">
-            <h3>Professionalism</h3>
-            <p>
-              Reliable, responsible, eager to learn, and committed to providing ethical and culturally
-              respectful care.
-            </p>
-          </div>
-
-          <div class="card skill-card">
-            <h3>Documentation Awareness</h3>
-            <p>
-              Awareness of the importance of accurate reporting, observing client changes, and following
-              care plans and organizational policies.
-            </p>
-          </div>
-
-          <div class="card skill-card">
-            <h3>Team Collaboration</h3>
-            <p>
-              Able to work cooperatively with instructors, preceptors, and interdisciplinary healthcare
-              teams to support quality care.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="certifications" class="section">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-tag">Certifications</p>
-          <h2>Training and Professional Documents</h2>
-        </div>
-
-        <div class="grid-2 cert-grid">
-          <div class="card cert-card">
-            <h3>Mask Fit Certificate</h3>
-            <p>Proof of mask fit training for safe use of respiratory protective equipment.</p>
-            <a href="certificates/maskfit.pdf" target="_blank" class="cert-link">View Certificate</a>
-          </div>
-
-          <div class="card cert-card">
-            <h3>CPR / First Aid</h3>
-            <p>Certification in emergency response, basic first aid, and CPR skills.</p>
-            <a href="certificates/cpr-firstaid.pdf" target="_blank" class="cert-link">View Certificate</a>
-          </div>
-
-          <div class="card cert-card">
             <h3>Dementia Certificate</h3>
-            <p>Training related to dementia awareness and supportive care approaches.</p>
-            <a href="certificates/dementia-certificate.pdf" target="_blank" class="cert-link">View Certificate</a>
-          </div>
-
-          <div class="card cert-card">
-            <h3>Food Handling Certificate</h3>
-            <p>Certification in safe food handling, hygiene, and basic food safety practices.</p>
-            <a href="certificates/foodhandling.pdf" target="_blank" class="cert-link">View Certificate</a>
+            <p>
+              Education related to dementia awareness and supportive care approaches.
+            </p>
+            <a href="assets/certificates/dementia-certificate.pdf" target="_blank" class="cert-link">View Certificate</a>
           </div>
 
           <div class="card cert-card">
             <h3>Driver’s License</h3>
-            <p>Valid driver’s license documentation for transportation-related requirements.</p>
-            <a href="certificates/driving-license.pdf" target="_blank" class="cert-link">View Document</a>
+            <p>
+              Valid G driver's license with a clear driving record.
+            </p>
+            <a href="assets/certificates/driving-license.pdf" target="_blank" class="cert-link">View Document</a>
+          </div>
+
+          <div class="card cert-card">
+            <h3>Other Diplomas / Transcripts / Awards</h3>
+            <p>
+              Additional documents showing my education and achievements over the years.
+            </p>
+            <a href="assets/certificates/transcripts.pdf" target="_blank" class="cert-link">View Documents</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <p class="note">
-          Note: If your certificate file names are different, update the links in the code above to match
-          your exact file names.
-        </p>
+    <section id="study" class="section section-alt">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-tag">Academic Plan</p>
+          <h2>Academic Plan of Study</h2>
+        </div>
+
+        <div class="card">
+          <h3>Semester 1</h3>
+          <p>
+            <strong>PSHS 100 - Anatomy:</strong> This course helped me understand the structure and
+            function of the human body. It gave me a foundation for understanding health, illness,
+            body systems, and the physical needs of clients.
+          </p>
+          <p>
+            <strong>PSHS 101 - Foundations of Personal Support Worker:</strong> This course introduced
+            the PSW role, responsibilities, ethics, and the importance of safe, respectful, and
+            client-centered care.
+          </p>
+          <p>
+            <strong>PSHS 102 - Personal Support Communications:</strong> This course focused on verbal,
+            non-verbal, and professional communication skills needed to work effectively with clients,
+            families, and healthcare team members.
+          </p>
+          <p>
+            <strong>PSHS 103 - Developmental Changes & Alteration in Health:</strong> This course
+            explored growth and development across the lifespan and helped me understand physical,
+            emotional, and cognitive changes related to health conditions.
+          </p>
+          <p>
+            <strong>PSHS 104 - Foundations of Mental Health:</strong> This course introduced mental
+            health concepts, common mental health conditions, and supportive approaches to care.
+          </p>
+        </div>
+
+        <div class="card top-gap">
+          <h3>Semester 2</h3>
+          <p>
+            <strong>PSHS 122 - Supporting Clients in Palliative Care:</strong> This course focuses on
+            caring for clients with life-limiting illness, comfort measures, emotional support, and
+            respect for cultural and spiritual needs at end of life.
+          </p>
+          <p>
+            <strong>PSHS 123 - Personal & Professional Growth:</strong> This course supports self-reflection,
+            professionalism, career planning, and growth as a future healthcare worker.
+          </p>
+          <p>
+            <strong>PSHS 125 - Clinical Practice:</strong> This course gives hands-on practice in a lab
+            or clinical environment and helps build confidence in PSW skills and safe care.
+          </p>
+          <p>
+            <strong>PSHS 126 - Community Placement:</strong> This course provides practical experience
+            in real healthcare settings where I can apply my learning, develop my skills, and work as
+            part of a care team.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-tag">Experience</p>
+      <h2>Professional Experience</h2>
+    </div>
+
+    <div class="grid-2">
+
+      <!-- Experience 1 -->
+      <div class="card">
+        <h3>Personal Support Worker (Community Placement)</h3>
+        <p><strong>Michael Garron Hospital</strong></p>
+        <p><em>March 2026 – Present</em></p>
+
+        <ul class="experience-list">
+          <li>Assisted patients with activities of daily living (ADLs) including bathing, grooming, dressing, toileting, and oral hygiene.</li>
+          <li>Supported mobility and transfers using proper body mechanics under preceptor supervision.</li>
+          <li>Observed and assisted with ceiling hoist transfers for patients with limited mobility.</li>
+          <li>Provided feeding assistance and monitored safety, especially for stroke patients.</li>
+          <li>Assisted with bed making, repositioning, and pressure injury prevention.</li>
+          <li>Maintained infection control practices including PPE and hand hygiene.</li>
+          <li>Collaborated with nurses, PSWs, and healthcare team members.</li>
+          <li>Delivered compassionate, patient-centered care.</li>
+        </ul>
+      </div>
+
+      <!-- Experience 2 -->
+      <div class="card">
+        <h3>Personal Support Worker (Student Placement)</h3>
+        <p><strong>Scarborough Health Network – Birchmount Hospital</strong></p>
+        <p><em>Jan 2026 – March 2026</em></p>
+
+        <ul class="experience-list">
+          <li>Assisted with daily personal care including bathing, dressing, toileting, and feeding.</li>
+          <li>Supported mobility using lifts, transfer belts, and assistive devices.</li>
+          <li>Observed and reported changes in patients’ condition to nursing staff.</li>
+          <li>Maintained infection control and a safe environment.</li>
+          <li>Provided emotional support and companionship.</li>
+          <li>Assisted with repositioning and comfort care.</li>
+        </ul>
+      </div>
+
+      <!-- Experience 3 -->
+      <div class="card">
+        <h3>Merchandiser (Part Time)</h3>
+        <p><strong>Shoppers Drug Mart, Toronto, ON</strong></p>
+        <p><em>Apr 2018 – Sep 2021</em></p>
+
+        <ul class="experience-list">
+          <li>Managed inventory and backroom operations following BIMI procedures.</li>
+          <li>Used PDT and MMS systems for inventory and labeling.</li>
+          <li>Monitored cooler/freezer temperatures and maintained records.</li>
+          <li>Checked expiry dates and ensured proper stock rotation.</li>
+          <li>Assisted customers with product inquiries and services.</li>
+          <li>Processed shipments and maintained documentation.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+    <section id="global" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-tag">Global Citizenship</p>
+          <h2>Respecting Diversity in Care</h2>
+        </div>
+
+        <div class="card">
+          <p>
+            For my Global Citizenship assignment, I explored how different cultures understand death
+            and dying. My presentation focused on Buddhist practices from Nepal and Muslim practices
+            from Pakistan. Through this work, I learned that death rituals may be different across
+            cultures, but respect, family support, prayer, and dignity are deeply important in many
+            traditions.
+          </p>
+          <p>
+            This assignment helped me understand the importance of culturally sensitive care. As a PSW,
+            I want to respect each client’s beliefs and support them and their families in a meaningful
+            and compassionate way.
+          </p>
+        </div>
       </div>
     </section>
 
@@ -436,25 +606,42 @@
       <div class="container">
         <div class="section-heading">
           <p class="section-tag">Career Goals</p>
-          <h2>Professional Direction</h2>
+          <h2>My Professional Goals (2–5 Years)</h2>
         </div>
 
         <div class="card">
           <p>
-            My goal is to build a strong healthcare career by providing compassionate support to clients
-            in hospitals, long-term care homes, and community settings. As a PSW student, I am focused on
-            strengthening my clinical skills, professional communication, and confidence in delivering safe
-            and respectful care.
+            Over the next two to five years, my goal is to work as a skilled and compassionate Personal
+            Support Worker in hospital, community, or long-term care settings. I want to continue
+            improving my clinical skills, communication, confidence, and ability to provide excellent care.
           </p>
           <p>
-            I hope to continue learning through placement experiences, teamwork, and ongoing education so I
-            can make a positive difference in the lives of the people I support.
+            In the future, I also hope to continue my education in healthcare and grow into more advanced
+            roles. My long-term goal is to build a strong healthcare career and make a meaningful
+            difference in the lives of the people I support.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="references" class="section section-alt">
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-tag">References</p>
+      <h2>Professional References</h2>
+    </div>
+
+    <div class="card references-preview-card">
+      <p>
+        Professional references are available upon request.
+      </p>
+
+      <a href="references.html" class="references-btn">View References</a>
+    </div>
+  </div>
+</section>
+
+    <section id="contact" class="section section-alt">
       <div class="container">
         <div class="section-heading">
           <p class="section-tag">Contact</p>
@@ -463,13 +650,14 @@
 
         <div class="card contact-card">
           <p>
-            Thank you for visiting my professional portfolio. Please feel free to contact me for placement,
-            employment, or professional networking opportunities.
+            Thank you for taking the time to review my e-portfolio. I would be grateful for the
+            opportunity to contribute my skills, compassion, and dedication in a healthcare setting.
           </p>
 
           <div class="contact-list">
             <p><strong>Email:</strong> <a href="mailto:loyelshyam@gmail.com">loyelshyam@gmail.com</a></p>
-            <p><strong>Phone:</strong> <a href="tel:+1 (647) 571-5285">+1 (647) 571-5285</a></p>
+            <p><strong>Phone:</strong> <a href="tel:+16475715285">+1 (647) 571-5285</a></p>
+            <p><strong>Location:</strong> Toronto, Ontario</p>
           </div>
         </div>
       </div>
@@ -479,10 +667,20 @@
   <footer class="footer">
     <div class="container footer-content">
       <p>© <span id="year"></span> Shyam Pandey. All rights reserved.</p>
-      <p>Personal Support Worker Student Portfolio</p>
+      <p>Personal Support Worker Student E-Portfolio</p>
     </div>
   </footer>
 
-  <script src="assets/scripts.js"></script>
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+    const yearSpan = document.getElementById("year");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("show");
+    });
+
+    yearSpan.textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
